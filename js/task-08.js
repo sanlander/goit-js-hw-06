@@ -1,6 +1,5 @@
 const refs = {
   form: document.querySelector(".login-form"),
-  input: document.querySelectorAll("input"),
 };
 
 refs.form.addEventListener("submit", onFormSubmit);
@@ -24,5 +23,5 @@ function onFormSubmit(event) {
   };
   console.log(formData);
 
-  refs.input.textContent = "";
+  event.currentTarget.reset();
 }
