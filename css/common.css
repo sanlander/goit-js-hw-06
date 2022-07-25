@@ -22,3 +22,17 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.gallery-list {
+  max-height: 150px;
+  margin: 10px;
+  
+}
