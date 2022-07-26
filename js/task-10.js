@@ -17,10 +17,12 @@ function onCreate(event) {
 
   const newDiv = [];
   let widthAndHeight = 20;
+  let fonSizeDiv = 10;
   for (let i = 0; i < inputValue; i += 1) {
     widthAndHeight += 10;
+    fonSizeDiv += 3;
     newDiv.push(`
-    <div style="width: ${widthAndHeight}px; height: ${widthAndHeight}px; background-color: ${getRandomHexColor()}; margin: 5px"></div>
+    <div style="width: ${widthAndHeight}px; height: ${widthAndHeight}px; background-color: ${getRandomHexColor()}; margin: 5px; display: flex; align-items: center;justify-content: center; font-size: ${fonSizeDiv}px; border: 2px solid tomato;">${widthAndHeight}px</div>
     `);
   }
 
@@ -29,5 +31,5 @@ function onCreate(event) {
 
 function onDestroy() {
   refs.boxes.innerHTML = "";
-  refs.formsInput.value = '';
+  refs.formsInput.value = "";
 }
