@@ -12,7 +12,9 @@ const refs = {
 refs.btnCreate.addEventListener("click", onCreate);
 refs.btnDestroy.addEventListener("click", onDestroy);
 
-function onCreate(event) {
+function onCreate() {
+  refs.boxes.innerHTML = "";
+
   let inputValue = Number(refs.formsInput.value);
 
   const newDiv = [];
