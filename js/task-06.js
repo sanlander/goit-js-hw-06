@@ -3,7 +3,7 @@ const refs = {
 };
 
 refs.input.addEventListener('blur', event => {
-  event.currentTarget.value.length >= Number(refs.input.dataset.length)
+  event.currentTarget.value.length === Number(refs.input.dataset.length)
     ? refs.input.classList.contains('invalid')
       ? refs.input.classList.replace('invalid', 'valid')
       : refs.input.classList.add('valid')
