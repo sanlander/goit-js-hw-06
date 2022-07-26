@@ -29,4 +29,5 @@ function onCreate(event) {
 
 function onDestroy() {
   refs.boxes.innerHTML = "";
+  refs.formsInput.value = '';
 }
