@@ -12,17 +12,19 @@ const refs = {
 refs.btnCreate.addEventListener("click", onCreate);
 refs.btnDestroy.addEventListener("click", onDestroy);
 
-function onCreate() {
-  refs.boxes.innerHTML = "";
+let widthAndHeight = 0;
+let fonSizeDiv = 10;
 
+function onCreate() {
   let inputValue = Number(refs.formsInput.value);
 
   const newDiv = [];
-  let widthAndHeight = 20;
-  let fonSizeDiv = 10;
+  
   for (let i = 0; i < inputValue; i += 1) {
-    widthAndHeight += 10;
+    widthAndHeight === 0 ? (widthAndHeight = 30) : (widthAndHeight += 10);
+
     fonSizeDiv += 3;
+
     newDiv.push(`
     <div style="width: ${widthAndHeight}px; height: ${widthAndHeight}px; background-color: ${getRandomHexColor()}; margin: 5px; display: flex; align-items: center;justify-content: center; font-size: ${fonSizeDiv}px; border: 2px solid tomato;">${widthAndHeight}px</div>
     `);
@@ -34,4 +36,6 @@ function onCreate() {
 function onDestroy() {
   refs.boxes.innerHTML = "";
   refs.formsInput.value = "";
+  widthAndHeight = 0;
+  fonSizeDiv = 10;
 }
